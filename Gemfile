@@ -50,3 +50,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Authentication
 gem 'devise'
+
+# pictures
+gem 'cloudinary'
+
+gem 'carrierwave'
