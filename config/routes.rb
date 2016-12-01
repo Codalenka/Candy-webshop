@@ -11,4 +11,10 @@ Rails.application.routes.draw do
 
   resources :photos
 
+  resources :products
+
+  resources :categories
+
+  resources :line_items
+
 end

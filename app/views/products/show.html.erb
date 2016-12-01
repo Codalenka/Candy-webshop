@@ -1,0 +1,24 @@
+<div class="panel panel-primary">
+  <div class="panel-heading"><%= @product.name %></div>
+
+  <div class="panel-body">
+
+    <p>Product: <%= @product.name %></p>
+    <p>Price: <%= @product.price %> Euro</p>
+
+      <% @product.photos.each do |photo| %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <%= image_tag photo.image.thumbnail, :size => '200x200' %>
+        </div>
+      </div>
+      <% end %>
+
+  </div>
+  <#= button_to 'Add to Cart', line_items_path(product_id: @product) %>
+</div>
+<# if current_user.present? && current_user.admin? #>
+<#= link_to "Delete", product_path( @product.id ), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"%>
+<#= link_to "Back", root_path, class: "btn btn-default" %>
+<#= link_to "Update", edit_product_path(@product), class: "btn btn-default" %>
+<# end %>
