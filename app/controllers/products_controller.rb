@@ -12,6 +12,21 @@ class ProductsController < ApplicationController
     @photos = @product.photos
   end
 
+  def order_by_name
+    @products = Product.order_by_name
+    render action: :index
+  end
+
+  def order_by_price
+    @products = Product.order_by_price
+    render action: :index
+  end
+
+  def order_by_created_at
+    @products = Product.order_by_created_at
+    render action: :index
+  end
+
 end
 
 

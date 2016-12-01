@@ -1,24 +1,19 @@
 <div class="row">
-  <div class="col-md-3">
-      <center><img class="logo" src="http://static.wixstatic.com/media/675e59_24087219fb674baf98bd364ea2b25290.png" alt="Mountain View" style="width:204px;height:168px;"></center>
-    <div class="list-group">
-      <% @categories.each do |category| %>
-          <div class="list-group-item"><%=link_to category.name, category %> </div>
-      <% end %>
-      <br>
-      <div class="list-group-item">
-      <%= form_tag products_path, :method => 'get' do %>
-        <%= text_field_tag :search, params[:search] %>
-        <%= submit_tag "Search" %>
-    <% end %> </div>
-    <br>
-    </div>
-  </div>
     <div class="col-md-9">
       <div class="panel panel-primary">
         <div class="panel-heading">
-          <%= @category.name %>
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sort by
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li> <%= link_to "Sort by name", :sort => "name" %></li>
+              <li><%= link_to "Sort by price", :sort => "price" %></li>
+              <li><%= link_to "Sort by new", :sort => "new" %></li>
+            </ul>
+          </div>
+            <%= @category.name %>
         </div>
+      </div>
         <div class="panel-body">
           <% if @category.products.any? %>
           <% @category.products.each do |product| %>

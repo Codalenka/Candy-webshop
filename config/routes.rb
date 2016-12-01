@@ -11,7 +11,13 @@ Rails.application.routes.draw do
 
   resources :photos
 
-  resources :products
+  resources :products do
+    collection do
+      get 'order_by_name'
+      get 'order_by_price'
+      get 'order_by_created_at'
+    end
+  end
 
   resources :categories
 

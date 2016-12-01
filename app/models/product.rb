@@ -6,4 +6,17 @@ class Product < ApplicationRecord
 
   validates :price, presence: true
   validates :name, presence: true
+
+
+  def self.order_by_name
+    order(:name)
+  end
+
+  def self.order_by_price
+    order(:price)
+  end
+
+  def self.order_by_created_at
+    order(:created_at)
+  end
 end
