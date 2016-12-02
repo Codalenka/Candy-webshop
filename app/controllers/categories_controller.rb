@@ -7,8 +7,8 @@ class CategoriesController < ApplicationController
 
   def show
     @categories = Category.all
-    @products = Product.order(params[:sort])
     @category = Category.find(params[:id])
+    @products = Product.order(params[:sort])
   end
 end
 

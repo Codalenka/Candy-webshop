@@ -18,7 +18,7 @@
         <% @categories.each do |category| %>
             <div class="list-group-item"><%=link_to category.name, category %> </div>
         <% end %>
-        <br>
+        <div class="list-group-item"><%=link_to "All products", root_path %> </div>
         <div class="list-group-item">
         <%= form_tag products_path, :method => 'get' do %>
           <%= text_field_tag :search, params[:search] %>
